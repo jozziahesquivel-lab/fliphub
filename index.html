@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FlipHub — Resell. Save. Profit.</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#050505;color:#f7f7f7;line-height:1.5;
+  background-image:radial-gradient(#fff 0.7px,transparent 0.7px);
+  background-size:90px 90px;
+}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background:
+ radial-gradient(circle at 20% 20%,rgba(255,255,255,.09),transparent 2px),
+ radial-gradient(circle at 75% 35%,rgba(255,255,255,.08),transparent 2px);
+ opacity:.8}
+a{text-decoration:none;color:inherit}
+.container{width:min(1400px,92%);margin:auto}
+nav{
+ height:90px;border-bottom:1px solid #252525;display:flex;align-items:center;
+ justify-content:space-between;position:sticky;top:0;z-index:10;background:rgba(3,3,3,.88);backdrop-filter:blur(12px)
+}
+.logo{font-weight:900;font-size:31px;letter-spacing:7px}
+.tag{font-size:10px;letter-spacing:4px;color:#ddd;margin-top:-3px}
+.navlinks{display:flex;gap:38px;font-size:14px}
+.navlinks a{padding:35px 0;border-bottom:2px solid transparent}
+.navlinks a:hover,.navlinks a.active{border-color:#fff}
+.icons{display:flex;gap:22px;font-size:22px}
+.hero{display:grid;grid-template-columns:.8fr 1.25fr;gap:42px;padding:48px 0 34px;align-items:center}
+.hero h1{font-size:54px;line-height:1.08;letter-spacing:-2px;max-width:570px}
+.hero p{font-size:18px;color:#ccc;margin:18px 0 28px}
+.btn{display:inline-flex;align-items:center;gap:22px;border:1px solid #fff;border-radius:7px;padding:14px 30px;font-weight:700}
+.btn.light{background:#fff;color:#000;border-color:#fff}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+.trust div{display:flex;gap:13px;align-items:center}
+.badge{width:38px;height:38px;border:2px solid #fff;border-radius:50%;display:grid;place-items:center;font-weight:800}
+.trust small{display:block;color:#aaa}
+.hero-card{
+ border:1px solid #555;border-radius:17px;overflow:hidden;min-height:370px;
+ background:linear-gradient(90deg,#080808,#111);position:relative;box-shadow:0 0 30px #000
+}
+.hero-card img{width:100%;height:100%;object-fit:cover;opacity:.88;position:absolute;inset:0}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.12) 45%,rgba(0,0,0,.9) 73%)}
+.hero-copy{position:absolute;right:5%;top:12%;width:28%;min-width:220px}
+.hero-copy h2{font-size:25px}.hero-copy p{color:#bbb;margin:8px 0 25px}
+.price{font-size:35px;font-weight:800;margin:25px 0}
+.section-title{display:flex;justify-content:space-between;align-items:center;margin:22px 0 15px}
+.section-title h2{font-size:21px}
+.section-title a{color:#ddd;font-size:13px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{border:1px solid #3d3d3d;border-radius:14px;overflow:hidden;background:#090909}
+.card img{width:100%;height:220px;object-fit:cover;display:block}
+.card-body{padding:20px}
+.card h3{font-size:21px}.card p{color:#aaa;margin:5px 0 17px}
+.card-bottom{display:flex;justify-content:space-between;align-items:center}
+.card-price{font-size:24px;font-weight:800}
+.small-btn{background:#fff;color:#000;border-radius:6px;padding:10px 17px;font-size:13px;font-weight:700}
+.features{display:grid;grid-template-columns:repeat(4,1fr);margin:34px 0 50px;border:1px solid #333;border-radius:13px;padding:20px}
+.feature{padding:10px 25px;border-right:1px solid #333}
+.feature:last-child{border:0}
+.feature strong{display:block}.feature span{color:#aaa;font-size:13px}
+.sell{margin:20px 0 50px;padding:38px;border:1px solid #444;border-radius:15px;background:linear-gradient(120deg,#101010,#050505)}
+.sell h2{font-size:31px}.sell p{color:#aaa;max-width:650px;margin:10px 0 22px}
+footer{border-top:1px solid #222;padding:30px 0 45px;color:#888;font-size:13px;display:flex;justify-content:space-between}
+@media(max-width:900px){
+ .navlinks{display:none}.hero{grid-template-columns:1fr}.hero h1{font-size:43px}
+ .hero-copy{width:36%}.cards{grid-template-columns:1fr}.features{grid-template-columns:1fr 1fr}
+ .feature:nth-child(2){border:0}.feature{border-bottom:1px solid #333;margin-bottom:8px}
+}
+@media(max-width:560px){
+ .logo{font-size:23px}.hero{padding-top:30px}.hero-card{min-height:430px}
+ .hero-copy{width:43%;top:8%}.hero-copy h2{font-size:20px}.hero-copy p{font-size:13px}
+ .trust{grid-template-columns:1fr}.features{grid-template-columns:1fr}.feature{border-right:0}
+ footer{flex-direction:column;gap:10px}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%">
+    <a href="#home">
+      <div class="logo">FLIPHUB</div>
+      <div class="tag">RESELL. SAVE. PROFIT.</div>
+    </a>
+    <div class="navlinks">
+      <a class="active" href="#home">HOME</a><a href="#shop">SHOP</a><a href="#sell">SELL</a>
+      <a href="#orders">ORDERS</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a>
+    </div>
+    <div class="icons"><span>⌕</span><span>🛒</span><span>♙</span></div>
+  </div>
+</nav>
+
+<main class="container" id="home">
+<section class="hero">
+  <div>
+    <h1>THE BEST DEALS.<br>ONE PLACE.</h1>
+    <p>Top quality products. Best prices.</p>
+    <a class="btn" href="#shop">SHOP NOW <span>→</span></a>
+    <div class="trust">
+      <div><span class="badge">✓</span><span><b>TRUSTED SELLERS</b><small>Verified & reliable</small></span></div>
+      <div><span class="badge">$</span><span><b>BEST PRICES</b><small>Unbeatable deals</small></span></div>
+      <div><span class="badge">⚡</span><span><b>FAST SHIPPING</b><small>Quick & safe delivery</small></span></div>
+    </div>
+  </div>
+  <div class="hero-card">
+    <img src="reference-design.png" alt="FlipHub product collection from the provided design">
+    <div class="hero-overlay"></div>
+    <div class="hero-copy">
+      <h2>Everything Pack</h2>
+      <p>Cologne, Shirts, Shoes, Glasses</p>
+      <div class="price">$20.00</div>
+      <a class="btn light" href="#shop">View Details　›</a>
+    </div>
+  </div>
+</section>
+
+<section id="shop">
+  <div class="section-title"><h2>FEATURED VENDORS</h2><a href="#shop">View All　→</a></div>
+  <div class="cards">
+    <article class="card">
+      <img src="reference-design.png" alt="AirPods vendor">
+      <div class="card-body"><h3>Air Pod Vendor</h3><p>Brand New AirPods<br>Trusted Vendor</p>
+      <div class="card-bottom"><span class="card-price">$5.00</span><a class="small-btn" href="#contact">View Details　›</a></div></div>
+    </article>
+    <article class="card">
+      <img src="reference-design.png" alt="Cologne vendor">
+      <div class="card-body"><h3>Cologne Vendor</h3><p>100% Authentic Colognes<br>Trusted Seller</p>
+      <div class="card-bottom"><span class="card-price">$5.00</span><a class="small-btn" href="#contact">View Details　›</a></div></div>
+    </article>
+    <article class="card">
+      <img src="reference-design.png" alt="Cologne vendor with receipts">
+      <div class="card-body"><h3>Cologne w/ Receipts Vendor</h3><p>Authentic Colognes<br>With Receipts</p>
+      <div class="card-bottom"><span class="card-price">$5.00</span><a class="small-btn" href="#contact">View Details　›</a></div></div>
+    </article>
+  </div>
+</section>
+
+<section class="features">
+  <div class="feature"><strong>✓　QUALITY GUARANTEED</strong><span>We stand by our products</span></div>
+  <div class="feature"><strong>▣　SECURE PAYMENTS</strong><span>Your info is always safe</span></div>
+  <div class="feature"><strong>♧　24/7 SUPPORT</strong><span>We're here to help</span></div>
+  <div class="feature"><strong>↩　EASY RETURNS</strong><span>Hassle-free returns</span></div>
+</section>
+
+<section class="sell" id="sell">
+  <h2>TURN YOUR PRODUCTS INTO PROFIT.</h2>
+  <p>List products, reach buyers, and build your reselling business with FlipHub. From sneakers and streetwear to fragrances and electronics, keep everything in one place.</p>
+  <a class="btn" href="#contact">START SELLING　→</a>
+</section>
+
+<section id="orders" style="display:none"></section>
+<section id="about" class="sell">
+  <h2>ABOUT FLIPHUB</h2>
+  <p>FlipHub is a marketplace concept built around reselling: discover deals, connect with vendors, and sell products for a profit.</p>
+</section>
+<section id="contact" class="sell">
+  <h2>CONTACT</h2>
+  <p>Questions about an order, vendor, or listing? Reach out and the FlipHub team can help.</p>
+  <a class="btn" href="mailto:hello@fliphub.example">EMAIL FLIPHUB　→</a>
+</section>
+</main>
+
+<footer class="container"><span>© 2026 FlipHub. All rights reserved.</span><span>Resell. Save. Profit.</span></footer>
+</body>
+</html>
